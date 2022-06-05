@@ -121,5 +121,5 @@ modules:
       - install -D appimage/guiscrcpy.appdata.xml /app/share/metainfo/in.srev.guiscrcpy.appdata.xml
       - desktop-file-edit --set-key=Icon --set-value=in.srev.guiscrcpy ./appimage/guiscrcpy.desktop
       - install -D appimage/guiscrcpy.desktop /app/share/applications/in.srev.guiscrcpy.desktop
-      - install -D appimage/guiscrcpy-128.png /app/share/app-info/icons/flatpak/128x128/in.srev.guiscrcpy.png
-      - install -D appimage/guiscrcpy-256.png /app/share/app-info/icons/flatpak/256x256/in.srev.guiscrcpy.png
+      - install -D appimage/guiscrcpy-128.png /app/share/icons/hicolor/128x128/apps/in.srev.guiscrcpy.png
+      - install -D appimage/guiscrcpy-256.png /app/share/icons/hicolor/256x256/apps/in.srev.guiscrcpy.png
