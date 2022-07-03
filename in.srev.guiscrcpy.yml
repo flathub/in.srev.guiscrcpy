@@ -123,5 +123,3 @@ modules:
       - install -D appimage/guiscrcpy.desktop /app/share/applications/in.srev.guiscrcpy.desktop
       - install -D appimage/guiscrcpy-128.png /app/share/app-info/icons/flatpak/128x128/in.srev.guiscrcpy.png
       - install -D appimage/guiscrcpy-256.png /app/share/app-info/icons/flatpak/256x256/in.srev.guiscrcpy.png
-      - install -D appimage/guiscrcpy.png /app/share/icons/hicolor/scalable/apps/in.srev.guiscrcpy.png
-
