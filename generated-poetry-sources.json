@@ -2,7 +2,7 @@
     "name": "poetry-deps",
     "buildsystem": "simple",
     "build-commands": [
-        "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} click colorama importlib-metadata psutil python-xlib qtpy six typing-extensions zipp"
+        "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} click colorama coloredlogs humanfriendly importlib-metadata packaging psutil pynput pyobjc-core pyobjc-framework-cocoa pyobjc-framework-quartz pyparsing pyreadline pyreadline3 python-xlib qtpy six typing-extensions zipp"
     ],
     "sources": [
         {
@@ -17,13 +17,28 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/c4/1f/e2238896149df09953efcc53bdcc7d23597d6c53e428c30e572eda5ec6eb/importlib_metadata-4.8.2-py3-none-any.whl",
-            "sha256": "53ccfd5c134223e497627b9815d5030edf77d2ed573922f7a0b8f8bb81a1c100"
+            "url": "https://files.pythonhosted.org/packages/a7/06/3d6badcf13db419e25b07041d9c7b4a2c331d3f4e7134445ec5df57714cd/coloredlogs-15.0.1-py2.py3-none-any.whl",
+            "sha256": "612ee75c546f53e92e70049c9dbfcc18c935a2b9a53b66085ce9ef6a6e5c0934"
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/e1/b0/7276de53321c12981717490516b7e612364f2cb372ee8901bd4a66a000d7/psutil-5.8.0.tar.gz",
-            "sha256": "0c9ccb99ab76025f2f0bbecf341d4656e9c1351db8cc8a03ccd62e318ab4b5c6"
+            "url": "https://files.pythonhosted.org/packages/f0/0f/310fb31e39e2d734ccaa2c0fb981ee41f7bd5056ce9bc29b2248bd569169/humanfriendly-10.0-py2.py3-none-any.whl",
+            "sha256": "1697e1a8a8f550fd43c2865cd84542fc175a61dcb779b6fee18cf6b6ccba1477"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/58/fd/f82049e9b21773188a72bd1bc53530b900392808f8b823e4c778e7c035f0/importlib_metadata-4.10.1-py3-none-any.whl",
+            "sha256": "899e2a40a8c4a1aec681feef45733de8a6c58f3f6a0dbed2eb6574b4387a77b6"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/05/8e/8de486cbd03baba4deef4142bd643a3e7bbe954a784dc1bb17142572d127/packaging-21.3-py3-none-any.whl",
+            "sha256": "ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/47/b6/ea8a7728f096a597f0032564e8013b705aa992a0990becd773dcc4d7b4a7/psutil-5.9.0.tar.gz",
+            "sha256": "869842dbd66bb80c3217158e629d6fceaecc3a3166d3d1faee515b05dd26ca25"
         },
         {
             "type": "file",
@@ -32,13 +47,43 @@
         },
         {
             "type": "file",
+            "url": "https://files.pythonhosted.org/packages/59/b0/abf64f846a4c3c115b546b4fa68b734bb750eed87fd5af6f73a5489eecd6/pyobjc-core-8.2.tar.gz",
+            "sha256": "6afb8ee1dd0647cbfaaf99906eca3b43ce045b27e3d4510462d04e7e5361c89b"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/d2/75/0e01d51f4b4cc5c1bf2509fe622f5d3eac09626bc5ebe3c7ad34fe5cfdff/pyobjc-framework-Cocoa-8.2.tar.gz",
+            "sha256": "f0901998e2f18415ef6d1f8a12b083f69fc93bd56b3e88040002e3c09bd8c304"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/e9/ec/8dc67a8edc7bfb87494d442fa43d5eef6169e1a09980ced8fdd00b0f9708/pyobjc-framework-Quartz-8.2.tar.gz",
+            "sha256": "219d8797235bf071723f8b0f30a681de0b12875e2d04ae902a3a269f72de0b66"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/80/c1/23fd82ad3121656b585351aba6c19761926bb0db2ebed9e4ff09a43a3fcc/pyparsing-3.0.7-py3-none-any.whl",
+            "sha256": "a6c06a88f252e6c322f65faf8f418b16213b51bdfaece0524c1c1bc30c63c484"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/bc/7c/d724ef1ec3ab2125f38a1d53285745445ec4a8f19b9bb0761b4064316679/pyreadline-2.1.zip",
+            "sha256": "4530592fc2e85b25b1a9f79664433da09237c1a270e4d78ea5aa3a2c7229e2d1"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/56/fc/a3c13ded7b3057680c8ae95a9b6cc83e63657c38e0005c400a5d018a33a7/pyreadline3-3.4.1-py3-none-any.whl",
+            "sha256": "b0efb6516fd4fb07b45949053826a62fa4cb353db5be2bbb4a7aa1fdd1e345fb"
+        },
+        {
+            "type": "file",
             "url": "https://files.pythonhosted.org/packages/c2/16/950463d36e8b64067c4d535038c5512de8200015e793d7d0a3f400187cbf/python_xlib-0.31-py2.py3-none-any.whl",
             "sha256": "1ec6ce0de73d9e6592ead666779a5732b384e5b8fb1f1886bd0a81cafa477759"
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/73/47/cc42c2b4fe4ddb7e289ef8f098c7249903ad09cd3f6ee8ec17c63de2b728/QtPy-1.11.2-py2.py3-none-any.whl",
-            "sha256": "83c502973e9fdd7b648d8267a421229ea3d9a0651c22e4c65a4d9228479c39b6"
+            "url": "https://files.pythonhosted.org/packages/ae/b0/56e602873b05108f0ef9189a237fefcfbcd2fa3d84130b59e50c84fc90e8/QtPy-2.0.1-py3-none-any.whl",
+            "sha256": "d93f2c98e97387fcc9d623d509772af5b6c15ab9d8f9f4c5dfbad9a73ad34812"
         },
         {
             "type": "file",
@@ -47,13 +92,13 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/17/61/32c3ab8951142e061587d957226b5683d1387fb22d95b4f69186d92616d1/typing_extensions-4.0.0-py3-none-any.whl",
-            "sha256": "829704698b22e13ec9eaf959122315eabb370b0884400e9818334d8b677023d9"
+            "url": "https://files.pythonhosted.org/packages/05/e4/baf0031e39cf545f0c9edd5b1a2ea12609b7fcba2d58e118b11753d68cf0/typing_extensions-4.0.1-py3-none-any.whl",
+            "sha256": "7f001e5ac290a0c0401508864c7ec868be4e701886d5b573a9528ed3973d9d3b"
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/bd/df/d4a4974a3e3957fd1c1fa3082366d7fff6e428ddb55f074bf64876f8e8ad/zipp-3.6.0-py3-none-any.whl",
-            "sha256": "9fe5ea21568a0a70e50f273397638d39b03353731e6cbbb3fd8502a33fec40bc"
+            "url": "https://files.pythonhosted.org/packages/52/c5/df7953fe6065185af5956265e3b16f13c2826c2b1ba23d43154f3af453bc/zipp-3.7.0-py3-none-any.whl",
+            "sha256": "b47250dd24f92b7dd6a0a8fc5244da14608f3ca90a5efcd37a3b1642fac9a375"
         }
     ]
 }

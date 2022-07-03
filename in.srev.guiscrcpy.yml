@@ -29,14 +29,14 @@ modules:
       - --buildtype=release
       - --strip
       - -Db_lto=true
-      - -Dprebuilt_server=scrcpy-server-v1.20
+      - -Dprebuilt_server=scrcpy-server-v1.24
     sources:
       - type: archive
-        url: https://github.com/Genymobile/scrcpy/archive/refs/tags/v1.20.tar.gz
-        sha256: 0c667e7de043a67a740be99d3f236a7aa4107ff62c408e7c462f4fe291f045a7
+        url: https://github.com/Genymobile/scrcpy/archive/refs/tags/v1.24.tar.gz
+        sha256: e3054ad453ac577b941f8df0eabc94e842affc6e1d10ba8d21cededfa2eacc73
       - type: file
-        url: https://github.com/Genymobile/scrcpy/releases/download/v1.20/scrcpy-server-v1.20
-        sha256: b20aee4951f99b060c4a44000ba94de973f9604758ef62beb253b371aad3df34
+        url: https://github.com/Genymobile/scrcpy/releases/download/v1.24/scrcpy-server-v1.24
+        sha256: ae74a81ea79c0dc7250e586627c278c0a9a8c5de46c9fb5c38c167fb1a36f056
 
   - name: adb
     buildsystem: simple
@@ -44,7 +44,7 @@ modules:
       - install -D adb /app/bin/adb
     sources:
       - type: archive
-        url: https://dl.google.com/android/repository/platform-tools_r30.0.1-linux.zip
+        url: https://dl.google.com/android/repository/platform-tools_r32.0.0-linux.zip
         sha256: b30ee914045fe52b50f058d66baa10205500ea410f71457aec04b70ceb14da8b
 
   - generated-poetry-sources.json
@@ -109,11 +109,11 @@ modules:
       - pip3 install --prefix=/app --no-deps --find-links="file://${PWD}" --no-index poetry-core==1.0.7 ./guiscrcpy*.whl 
     sources:
       - type: file 
-        url: https://github.com/srevinsaju/guiscrcpy/releases/download/v4.11.2/guiscrcpy-4.11.2-py3-none-any.whl
-        sha256: 514ea4cf4c0e0be31108579e57bbae0e7c70da5c488c2c887aef93428b52ece5
+        url: https://github.com/srevinsaju/guiscrcpy/releases/download/v2022.6.1/guiscrcpy-2022.6.1-py3-none-any.whl
+        sha256: 0dde7873b91621bcc97db49bcb11f73c7a0cfe465465a1ca15fe94d57abd84eb
       - type: git
         url: https://github.com/srevinsaju/guiscrcpy
-        commit: 32035f9aee4c2a37aa8a17c24ac9a254d9fa09db
+        commit: 11acb50e610f196a830209fb8a96b7f66da3e8a0
       - type: file
         url: https://files.pythonhosted.org/packages/09/79/5ab16fbf2d9354c242e9f9e784d604dd06842405f7797e71238f3c053200/poetry_core-1.0.7-py2.py3-none-any.whl
         sha256: 4f8a7f5390d772f42c4c4c3f188e6424b802cb4b57466c6633a1b9ac36f18a43
