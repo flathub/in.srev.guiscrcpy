@@ -103,12 +103,12 @@ modules:
           - processed=`sed -e 's|prefix|sysroot|' <<< $@`
           - python3 configure.py $processed
 
-  - name: "guiscrcpy"
-    buildsystem: "simple"
+  - name: guiscrcpy
+    buildsystem: simple
     build-commands:
-      - pip3 install --prefix=/app --no-deps --find-links="file://${PWD}" --no-index poetry-core==1.0.7 ./guiscrcpy*.whl 
+      - pip3 install --prefix=/app --no-deps --find-links="file://${PWD}" --no-index poetry-core==1.0.7 ./guiscrcpy*.whl
     sources:
-      - type: file 
+      - type: file
         url: https://github.com/srevinsaju/guiscrcpy/releases/download/v4.11.2/guiscrcpy-4.11.2-py3-none-any.whl
         sha256: 514ea4cf4c0e0be31108579e57bbae0e7c70da5c488c2c887aef93428b52ece5
       - type: git
@@ -117,9 +117,10 @@ modules:
       - type: file
         url: https://files.pythonhosted.org/packages/09/79/5ab16fbf2d9354c242e9f9e784d604dd06842405f7797e71238f3c053200/poetry_core-1.0.7-py2.py3-none-any.whl
         sha256: 4f8a7f5390d772f42c4c4c3f188e6424b802cb4b57466c6633a1b9ac36f18a43
-    post-install: 
-      - install -D appimage/guiscrcpy.appdata.xml /app/share/metainfo/in.srev.guiscrcpy.appdata.xml
+    post-install:
+      - sed -i "/\<launchable/d" appimage/guiscrcpy.appdata.xml
+      - install -Dm644 appimage/guiscrcpy.appdata.xml /app/share/metainfo/in.srev.guiscrcpy.appdata.xml
       - desktop-file-edit --set-key=Icon --set-value=in.srev.guiscrcpy ./appimage/guiscrcpy.desktop
-      - install -D appimage/guiscrcpy.desktop /app/share/applications/in.srev.guiscrcpy.desktop
-      - install -D appimage/guiscrcpy-128.png /app/share/app-info/icons/flatpak/128x128/in.srev.guiscrcpy.png
-      - install -D appimage/guiscrcpy-256.png /app/share/app-info/icons/flatpak/256x256/in.srev.guiscrcpy.png
+      - install -Dm644 appimage/guiscrcpy.desktop /app/share/applications/in.srev.guiscrcpy.desktop
+      - install -Dm644 appimage/guiscrcpy-128.png /app/share/icons/hicolor/128x128/apps/in.srev.guiscrcpy.png
+      - install -Dm644 appimage/guiscrcpy-256.png /app/share/icons/hicolor/256x256/apps/in.srev.guiscrcpy.png
