@@ -2,7 +2,7 @@
     "name": "poetry-deps",
     "buildsystem": "simple",
     "build-commands": [
-        "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} click colorama coloredlogs humanfriendly importlib-metadata packaging psutil pynput pyobjc-core pyobjc-framework-cocoa pyobjc-framework-quartz pyparsing pyreadline pyreadline3 python-xlib qtpy six typing-extensions zipp"
+        "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} click colorama coloredlogs humanfriendly importlib-metadata packaging psutil pynput pyparsing pyreadline pyreadline3 python-xlib qtpy six typing-extensions zipp"
     ],
     "sources": [
         {
@@ -42,8 +42,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/e7/32/fa88984fc580de9e9fd08ee36dfd78ea15658d5b0268095785da7ab75ba0/pynput-1.6.8.tar.gz",
-            "sha256": "68c1863d6a1520b44b6a915e866cbfa1b8d127aef9289f25183c93e28ee5049a"
+            "url": "https://files.pythonhosted.org/packages/33/0a/ea13c055a90b1aff5945e7eb330584f15e5282aead15a8f3cdb977a1534e/pynput-1.6.8-py2.py3-none-any.whl",
+            "sha256": "42d6d58abe401a4c98ea04e443e61f74b6b0f97672f42042f566c68700ad0c65"
         },
         {
             "type": "file",

@@ -45,7 +45,7 @@ modules:
     sources:
       - type: archive
         url: https://dl.google.com/android/repository/platform-tools_r32.0.0-linux.zip
-        sha256: b30ee914045fe52b50f058d66baa10205500ea410f71457aec04b70ceb14da8b
+        sha256: b10f0e159f11aa08437f2e612c91e52616b8429e9d3b8c2d230456f0edd394e6
 
   - generated-poetry-sources.json
 
