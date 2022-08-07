@@ -18,6 +18,7 @@ finish-args:
   - "--socket=x11"
   - "--socket=wayland"
   - "--device=all"
+  - "--persist=.android"
 
 modules:
   - shared-modules/libusb/libusb.json
