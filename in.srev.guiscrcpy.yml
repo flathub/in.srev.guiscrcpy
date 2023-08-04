@@ -9,6 +9,8 @@ add-extensions:
     directory: lib/ffmpeg
     version: '21.08'
     add-ld-path: "."
+base: com.riverbankcomputing.PyQt.BaseApp
+base-version: 5.15-21.08
 cleanup-commands:
   - mkdir -p ${FLATPAK_DEST}/lib/ffmpeg
 
@@ -49,60 +51,6 @@ modules:
         sha256: b10f0e159f11aa08437f2e612c91e52616b8429e9d3b8c2d230456f0edd394e6
 
   - generated-poetry-sources.json
-
-  # https://github.com/flathub/org.frescobaldi.Frescobaldi/blob/c73dd9f729f8a9c908870653db0cfee5f70d8991/org.frescobaldi.Frescobaldi.yaml#L207
-  - name: sip
-    buildsystem: simple
-    build-commands:
-      - python3 configure.py
-        --bindir=/app/bin
-        --destdir=/app/lib/python3.9/site-packages
-        --incdir=/app/include
-        --sipdir=/app/share/sip
-        --stubsdir=/app/lib/python3.9/site-packages
-        --sip-module=PyQt5.sip
-      - make -j $FLATPAK_BUILDER_N_JOBS
-      - make install
-    sources:
-      - type: archive
-        url: https://distfiles.macports.org/py-sip/sip-4.19.24.tar.gz
-        sha256: edcd3790bb01938191eef0f6117de0bf56d1136626c0ddb678f3a558d62e41e5
-    cleanup:
-      - /bin
-
-  - name: PyQt5
-    build-options:
-      env:
-        - QMAKEPATH=/app/lib
-    config-opts:
-      - --confirm-license
-      - --bindir=/app/bin
-      - --destdir=/app/lib/python3.9/site-packages
-      - --sipdir=/app/share/sip
-      - --sip-incdir=/app/include
-      - --stubsdir=/app/lib/python3.9/site-packages/PyQt5
-      - --no-designer-plugin
-      - --no-qml-plugin
-      - --enable QtCore
-      - --enable QtGui
-      - --enable QtNetwork
-      - --enable QtSvg
-      - --enable QtWidgets
-      - QMAKE_CFLAGS_RELEASE='-I/usr/include/python3.9/'
-      - QMAKE_CXXFLAGS_RELEASE='-I/usr/include/python3.9/'
-    cleanup:
-      - /bin
-      - /include
-    sources:
-      - type: archive
-        url: https://files.pythonhosted.org/packages/28/6c/640e3f5c734c296a7193079a86842a789edb7988dca39eab44579088a1d1/PyQt5-5.15.2.tar.gz
-        sha256: 372b08dc9321d1201e4690182697c5e7ffb2e0770e6b4a45519025134b12e4fc
-
-      - type: script
-        dest-filename: configure
-        commands:
-          - processed=`sed -e 's|prefix|sysroot|' <<< $@`
-          - python3 configure.py $processed
 
   - name: guiscrcpy
     buildsystem: simple
