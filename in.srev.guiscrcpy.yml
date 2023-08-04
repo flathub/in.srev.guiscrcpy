@@ -110,11 +110,11 @@ modules:
       - pip3 install --prefix=/app --no-deps --find-links="file://${PWD}" --no-index poetry-core==1.0.7 ./guiscrcpy*.whl
     sources:
       - type: file 
-        url: https://github.com/srevinsaju/guiscrcpy/releases/download/v2022.7.1/guiscrcpy-2022.6.1-py3-none-any.whl
-        sha256: dea11dbac23cc260778a5be0c66e2dbb827b77f6d47998bdda17e59f6e3b7870
+        url: https://github.com/srevinsaju/guiscrcpy/releases/download/v2023.1.1/guiscrcpy-2023.1.1-py3-none-any.whl
+        sha256: a1f8a39598d135a88cb694ed9f449a9b377732ead8c6427e364153eb77df9a99
       - type: git
         url: https://github.com/srevinsaju/guiscrcpy
-        commit: 66249d4ec960b8392d75fd2a360975fe51393a46
+        commit: 332175e50b63d1503c08afc5d839fc3f3fc50aba
 
       - type: file
         url: https://files.pythonhosted.org/packages/09/79/5ab16fbf2d9354c242e9f9e784d604dd06842405f7797e71238f3c053200/poetry_core-1.0.7-py2.py3-none-any.whl
