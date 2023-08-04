@@ -13,6 +13,11 @@ base: com.riverbankcomputing.PyQt.BaseApp
 base-version: 5.15-21.08
 cleanup-commands:
   - mkdir -p ${FLATPAK_DEST}/lib/ffmpeg
+  - /app/cleanup-BaseApp.sh
+
+build-options:
+  env:
+    - BASEAPP_REMOVE_WEBENGINE=1
 
 finish-args:
   - "--share=network"
