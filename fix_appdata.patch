@@ -1,0 +1,42 @@
+From 407f0f69c664587bfb77c86404f39dc790be0aae Mon Sep 17 00:00:00 2001
+From: Sabri Ünal <161761531+yakushabb@users.noreply.github.com>
+Date: Thu, 18 Dec 2025 03:51:45 +0300
+Subject: [PATCH] Fix appdata papercuts
+
+---
+ appimage/guiscrcpy.appdata.xml | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/appimage/guiscrcpy.appdata.xml b/appimage/guiscrcpy.appdata.xml
+index 16569f7..1b215e5 100644
+--- a/appimage/guiscrcpy.appdata.xml
++++ b/appimage/guiscrcpy.appdata.xml
+@@ -2,22 +2,24 @@
+ <component type="desktop-application">
+ 	<id>in.srev.guiscrcpy</id>
+ 	<name>guiscrcpy</name>
++	<developer_name>Srevin Saju</developer_name>
+     <metadata_license>MIT</metadata_license>
+     <project_license>GPL-3.0+</project_license>
+     <summary>Android Screen Mirroring Software</summary>
+     <description>
+       <p>A user friendly, open source android screen mirroring client built on top of scrcpy
+         </p>
+     </description>
+     <content_rating type="oars-1.1"/>
+-    <launchable type="desktop-id">guiscrcpy.desktop</launchable>
++    <launchable type="desktop-id">in.srev.guiscrcpy.desktop</launchable>
+     <screenshots>
+         <screenshot type="default">
+           <image>https://raw.githubusercontent.com/srevinsaju/guiscrcpy/main/docs/img/screenshot.jpg</image>
+           <caption>Screenshot showing a demo of guiscrcpy's functionality</caption>
+         </screenshot>
+     </screenshots>
+     <url type="homepage">https://github.com/srevinsaju/guiscrcpy</url>
++    <url type="vcs-browser">https://github.com/srevinsaju/guiscrcpy</url>
+     <provides>
+         <binary>python{{ python-version }}</binary>
+     </provides>
+--
+libgit2 1.7.2
+
